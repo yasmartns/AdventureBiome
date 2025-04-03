@@ -9,9 +9,9 @@ func _ready():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
-		visible = true
-		get_tree().paused = true
-		pause_btn.grab_focus()
+		visible = !visible
+		get_tree().paused = !get_tree().paused
+		
 
 
 func _on_pause_btn_pressed():

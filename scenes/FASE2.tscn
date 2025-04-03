@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cknkocd81sric"]
+[gd_scene load_steps=22 format=3 uid="uid://cknkocd81sric"]
 
 [ext_resource type="Texture2D" uid="uid://drjhrsd7o0qre" path="res://cenario/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/1.png" id="1_3lu0j"]
 [ext_resource type="Texture2D" uid="uid://bpsf6wmqhpdd1" path="res://cenario/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/3.png" id="2_gvyxy"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://uapn6782gojr" path="res://assets/Free/Terrain/Terrain (16x16).png" id="4_s7j8f"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="5_kpbn5"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="6_n83sk"]
-[ext_resource type="PackedScene" uid="uid://bgv5v2fxqlswe" path="res://scenes/platform.tscn" id="7_7en0y"]
+[ext_resource type="PackedScene" uid="uid://5gnt2hmm16bo" path="res://scenes/platformf_2.tscn" id="8_bvf1q"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="8_ihwsg"]
 [ext_resource type="PackedScene" uid="uid://d2w2i5h0lhc6l" path="res://scenes/slime.tscn" id="9_kguo2"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="10_p2nw7"]
@@ -237,8 +237,11 @@ sources/2 = SubResource("TileSetAtlasSource_3ph8y")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cn5tm"]
 distance = -117.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofyrh"]
+size = Vector2(28, 534)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjn14"]
-size = Vector2(72, 534)
+size = Vector2(45, 534)
 
 [node name="Tutorial" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-704.0, 1695.0, -707.0, 1697.0]
@@ -279,14 +282,14 @@ shape = SubResource("WorldBoundaryShape2D_cn5tm")
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Platform" parent="Platforms" instance=ExtResource("7_7en0y")]
+[node name="Platformf2" parent="Platforms" instance=ExtResource("8_bvf1q")]
+position = Vector2(-968, -328)
+
+[node name="Platformf3" parent="Platforms" instance=ExtResource("8_bvf1q")]
 position = Vector2(-440, -160)
 
-[node name="Platform2" parent="Platforms" instance=ExtResource("7_7en0y")]
+[node name="Platformf4" parent="Platforms" instance=ExtResource("8_bvf1q")]
 position = Vector2(-592, -88)
-
-[node name="Platform3" parent="Platforms" instance=ExtResource("7_7en0y")]
-position = Vector2(-968, -328)
 
 [node name="Labels" type="Node" parent="."]
 
@@ -321,11 +324,11 @@ position = Vector2(-423, -50)
 position = Vector2(-292, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Parede"]
-position = Vector2(-896, -321)
-shape = SubResource("RectangleShape2D_pjn14")
+position = Vector2(-897, -324)
+shape = SubResource("RectangleShape2D_ofyrh")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Parede"]
-position = Vector2(196, -461)
+position = Vector2(146.5, -533)
 shape = SubResource("RectangleShape2D_pjn14")
 
 [node name="Camera2D" type="Camera2D" parent="."]

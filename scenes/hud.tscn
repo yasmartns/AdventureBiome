@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://e264k7dbywou"]
+[gd_scene load_steps=22 format=3 uid="uid://e264k7dbywou"]
 
 [ext_resource type="Script" path="res://scripts/CanvasLayer.gd" id="1_dwuce"]
 [ext_resource type="Texture2D" uid="uid://bped01tsjeycn" path="res://assets/sprites/coin.png" id="2_hy3ro"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_ju6t3"]
+[ext_resource type="Texture2D" uid="uid://bjkd852ofsgby" path="res://assets/Free/Menu/Buttons/Settings.png" id="4_ta2bv"]
+[ext_resource type="PackedScene" uid="uid://dp18sl1moehdt" path="res://scenes/pause_menu.tscn" id="5_7d3ma"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4n4my"]
 atlas = ExtResource("2_hy3ro")
@@ -96,6 +98,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xd8o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjdf7"]
+bg_color = Color(0.826944, 0.325076, 0, 0.215686)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ke2ny"]
+
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_dwuce")
 
@@ -116,3 +129,21 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1100, 50)
+scale = Vector2(2, 2)
+texture = ExtResource("4_ta2bv")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = -9.0
+offset_top = -10.0
+offset_right = 9.0
+offset_bottom = 10.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3xd8o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pjdf7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ke2ny")
+
+[node name="Pause_menu" parent="." instance=ExtResource("5_7d3ma")]
+
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]

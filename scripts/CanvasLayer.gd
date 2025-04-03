@@ -8,10 +8,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	rotuloMoedas.text = str(%GameManager.score)
+	if %GameManager:
+		rotuloMoedas.text = str(%GameManager.score)
+	
+	
 
 
 func _on_button_pressed() -> void:
 	get_tree().paused = true
-	$Button/Pause_menu.visible = true
+	$Pause_menu.visible = true
+	print("TESTE")
 	pass # Replace with function body.

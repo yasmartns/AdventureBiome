@@ -10,7 +10,7 @@ size = Vector2(32, 8)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_moorb")
 region_enabled = true
-region_rect = Rect2(16, 33, 32, 8)
+region_rect = Rect2(17, 33, 30, 7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_13ihi")

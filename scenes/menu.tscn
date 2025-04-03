@@ -1,174 +1,52 @@
-[gd_scene load_steps=14 format=3 uid="uid://cayxes377f026"]
+[gd_scene load_steps=5 format=3 uid="uid://cayxes377f026"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_soav4"]
-[ext_resource type="Texture2D" uid="uid://bsrq6cw3g6hg1" path="res://cenario/CAPA JOGO.png" id="2_o3yr4"]
-[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_n8r5n"]
+[ext_resource type="Texture2D" uid="uid://c5awqn8i7x2xf" path="res://cenario/pixilart-drawing (2).png" id="1_kka2y"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_qeleq"]
+[ext_resource type="Script" path="res://scenes/menu.gd" id="2_4ag6s"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ci2t5"]
-bg_color = Color(0.556863, 0.00392157, 0.933333, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 21
-corner_radius_top_right = 21
-corner_radius_bottom_right = 21
-corner_radius_bottom_left = 21
+[sub_resource type="Theme" id="Theme_73gj2"]
+Button/fonts/font = ExtResource("1_qeleq")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldbup"]
-bg_color = Color(0.556863, 0.00392157, 0.933333, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 21
-corner_radius_top_right = 21
-corner_radius_bottom_right = 21
-corner_radius_bottom_left = 21
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0q81s"]
-bg_color = Color(0.556863, 0.00392157, 0.933333, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 21
-corner_radius_top_right = 21
-corner_radius_bottom_right = 21
-corner_radius_bottom_left = 21
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f23lt"]
-bg_color = Color(0.556863, 0.00392157, 0.933333, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 21
-corner_radius_top_right = 21
-corner_radius_bottom_right = 21
-corner_radius_bottom_left = 21
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayuxn"]
-bg_color = Color(0.556863, 0.00392157, 0.933333, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 21
-corner_radius_top_right = 21
-corner_radius_bottom_right = 21
-corner_radius_bottom_left = 21
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmxn7"]
-bg_color = Color(0.227451, 0, 0.4, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 21
-corner_radius_top_right = 21
-corner_radius_bottom_right = 21
-corner_radius_bottom_left = 21
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t3v8"]
-bg_color = Color(0.556863, 0.00392157, 0.933333, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 21
-corner_radius_top_right = 21
-corner_radius_bottom_right = 21
-corner_radius_bottom_left = 21
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si3g8"]
-bg_color = Color(0.556863, 0.00392157, 0.933333, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 21
-corner_radius_top_right = 21
-corner_radius_bottom_right = 21
-corner_radius_bottom_left = 21
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1over"]
-bg_color = Color(0.556863, 0.00392157, 0.933333, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 21
-corner_radius_top_right = 21
-corner_radius_bottom_right = 21
-corner_radius_bottom_left = 21
-
-[sub_resource type="Theme" id="Theme_mx7lj"]
-Button/font_sizes/font_size = 40
-Button/styles/disabled_mirrored = SubResource("StyleBoxFlat_ci2t5")
-Button/styles/hover = SubResource("StyleBoxFlat_ldbup")
-Button/styles/hover_mirrored = SubResource("StyleBoxFlat_0q81s")
-Button/styles/hover_pressed = SubResource("StyleBoxFlat_f23lt")
-Button/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ayuxn")
-Button/styles/normal = SubResource("StyleBoxFlat_jmxn7")
-Button/styles/normal_mirrored = SubResource("StyleBoxFlat_6t3v8")
-Button/styles/pressed = SubResource("StyleBoxFlat_si3g8")
-Button/styles/pressed_mirrored = SubResource("StyleBoxFlat_1over")
-
-[node name="Menu" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-theme = SubResource("Theme_mx7lj")
-script = ExtResource("1_soav4")
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_73gj2")
+script = ExtResource("2_4ag6s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(579, 325)
-scale = Vector2(1.5625, 0.877717)
-texture = ExtResource("2_o3yr4")
+position = Vector2(576, 323)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("1_kka2y")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Play" type="Button" parent="."]
 layout_mode = 0
-offset_top = -11.0
-offset_right = 1165.0
-offset_bottom = 661.0
-color = Color(0, 0, 0.258824, 1)
-
-[node name="FASE 1" type="Button" parent="."]
-layout_mode = 0
-offset_left = 884.0
-offset_top = 317.0
-offset_right = 1098.0
-offset_bottom = 398.0
+offset_left = 292.0
+offset_top = 313.0
+offset_right = 469.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 40
 text = "PLAY"
-
-[node name="Tutorial" type="Button" parent="."]
-layout_mode = 0
-offset_left = 846.0
-offset_top = 208.0
-offset_right = 1136.0
-offset_bottom = 285.0
-text = "TUTORIAL"
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 888.0
-offset_top = 439.0
-offset_right = 1104.0
-offset_bottom = 524.0
-text = "EXIT
-"
+offset_left = 633.0
+offset_top = 312.0
+offset_right = 820.0
+offset_bottom = 387.0
+theme_override_font_sizes/font_size = 40
+text = "EXIT"
 
-[node name="Label" type="Label" parent="."]
+[node name="Tutorial" type="Button" parent="."]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 20.0
-offset_right = 924.0
-offset_bottom = 225.0
-theme_override_fonts/font = ExtResource("3_n8r5n")
-theme_override_font_sizes/font_size = 100
-text = "adventure
-biome"
+offset_left = 466.0
+offset_top = 402.0
+offset_right = 640.0
+offset_bottom = 477.0
+theme_override_font_sizes/font_size = 20
+text = "TUTORIAL"
 
-[connection signal="pressed" from="FASE 1" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
